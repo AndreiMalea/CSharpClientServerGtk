@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="**\*.glade" />
+        <EmbeddedResource Include="**\*.glade">
+            <LogicalName>%(Filename)%(Extension)</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Update="GUI\Client.glade">
+          <LogicalName>Client.glade</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Update="GUI\Login.glade">
+          <LogicalName>Login.glade</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Update="GUI\MainWindow.glade">
+          <LogicalName>MainWindow.glade</LogicalName>
+        </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="GtkSharp" Version="3.24.24.*" />
+        <PackageReference Include="System.Net.Sockets" Version="4.3.0" />
+        <PackageReference Include="System.Threading" Version="4.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Common\Common.csproj" />
+      <ProjectReference Include="..\Server\Server.csproj" />
+    </ItemGroup>
+
+</Project>

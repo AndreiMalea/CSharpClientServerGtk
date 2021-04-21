@@ -1,0 +1,229 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Client/Client.csproj": {}
+  },
+  "projects": {
+    "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Client/Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Client/Client.csproj",
+        "projectName": "Client",
+        "projectPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Client/Client.csproj",
+        "packagesPath": "/home/andrei/.nuget/packages/",
+        "outputPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Client/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/andrei/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj": {
+                "projectPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj"
+              },
+              "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Server/Server.csproj": {
+                "projectPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Server/Server.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "GtkSharp": {
+              "target": "Package",
+              "version": "[3.24.24.*, )"
+            },
+            "System.Net.Sockets": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Threading": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj",
+        "projectName": "Common",
+        "projectPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj",
+        "packagesPath": "/home/andrei/.nuget/packages/",
+        "outputPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/andrei/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "GtkSharp": {
+              "target": "Package",
+              "version": "[3.24.24.*, )"
+            },
+            "Mono.Data.Sqlite": {
+              "target": "Package",
+              "version": "[1.0.61, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
+            },
+            "System.Net.Sockets": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Threading": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Server/Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Server/Server.csproj",
+        "projectName": "Server",
+        "projectPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Server/Server.csproj",
+        "packagesPath": "/home/andrei/.nuget/packages/",
+        "outputPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Server/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/andrei/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj": {
+                "projectPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "GtkSharp": {
+              "target": "Package",
+              "version": "[3.24.24.*, )"
+            },
+            "Mono.Data.Sqlite": {
+              "target": "Package",
+              "version": "[1.0.61, )"
+            },
+            "System.Net.Sockets": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Threading": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
