@@ -21,15 +21,14 @@ namespace Lab1CSharp
 
     static class Program
     {
-        private static String GetConnectionStringByName(String name)
+        private static Configuration GetConfiguration()
         {
             String rv = null;
             ExeConfigurationFileMap configMap = new ExeConfigurationFileMap();
             try
             {
                 configMap.ExeConfigFilename =
-                    Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName + "/bd.config";
-                // configMap.ExeConfigFilename = Directory.GetParent(Directory.GetCurrentDirectory()).FullName + "/bd.config";
+                    Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "/App.config";
             }
             catch (Exception e)
             {
@@ -37,22 +36,17 @@ namespace Lab1CSharp
             }
 
             var set = ConfigurationManager.OpenMappedExeConfiguration(configMap,
-                ConfigurationUserLevel.None).ConnectionStrings.ConnectionStrings[name];
-            if (set != null)
-            {
-                rv = set.ConnectionString;
-            }
-
-            return rv;
+                ConfigurationUserLevel.None);
+            return set;
         }
 
         [STAThread]
         public static void Main(string[] args)
         {
-            String connectionString = GetConnectionStringByName("SQLite");
             Transaction.IdListInit();
 
-            var srv = new ClientProxy(55556);
+            Console.WriteLine(GetConfiguration().AppSettings.Settings["port"].Value);
+            var srv = new ClientProxy(int.Parse(GetConfiguration().AppSettings.Settings["port"].Value));
 
             var app = new Application("org.GtkApplication.GtkApplication", GLib.ApplicationFlags.None);
             Application.Init();
@@ -61,7 +55,6 @@ namespace Lab1CSharp
             try
             {
                 win.App = app;
-                // app.AddWindow(win);
                 Console.WriteLine("am ajuns");
                 win.ShowAll();
                 Application.Run();

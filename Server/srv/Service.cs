@@ -10,15 +10,20 @@ using DateTime = System.DateTime;
 
 namespace Server.srv
 {
-    public class Service :  AbstractObserable, IService
+    public class Service : AbstractObserable, IService
     {
+        public void Close(IObserver o)
+        {
+            throw new NotImplementedException();
+        }
+
         private string _conn;
         private IArtistRepo _artistRepo = null;
         private IEmployeeRepo _employeeRepo = null;
         private IOfficeRepo _officeRepo = null;
         private IShowRepo _showRepo = null;
         private ITransactionRepo _transactionRepo = null;
-        
+
         public Service(string conn)
         {
             this._conn = conn;
@@ -38,7 +43,7 @@ namespace Server.srv
         {
             return _showRepo.GetAllList();
         }
-        
+
         public Employee EmployeeByUser(string user)
         {
             return _employeeRepo.GetEmployeeByUser(user);
@@ -46,13 +51,18 @@ namespace Server.srv
 
         public Employee Login(string user, string pass)
         {
-            if (_employeeRepo.UsernameExists(user)) {
-                if (_employeeRepo.GetPasswordByUser(user).Equals(pass)) {
+            if (_employeeRepo.UsernameExists(user))
+            {
+                if (_employeeRepo.GetPasswordByUser(user).Equals(pass))
+                {
                     return _employeeRepo.GetEmployeeByUser(user);
-                } else {
+                }
+                else
+                {
                     return null;
                 }
             }
+
             return null;
         }
 
@@ -64,7 +74,7 @@ namespace Server.srv
         public Transaction BuyTicket(Show s, int no, string client)
         {
             if (s.TicketNumber == 0) throw new Exception("There are no more tickets for this show!");
-           
+
             var trans = new Transaction(client, s, DateTime.Now, no);
             var x = _transactionRepo.Save(trans);
             if (x == null)
@@ -255,5 +265,5 @@ namespace Server.srv
         // }
         //
         //other services
-        }
+    }
 }

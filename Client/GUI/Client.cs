@@ -1,19 +1,30 @@
 using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using Gdk;
 using GLib;
 using Gtk;
 using Common.Domain;
 using Common.Interfaces;
+using Common.Observer;
+using Microsoft.VisualBasic;
 using Server.srv;
 using Application = Gtk.Application;
 using DateTime = System.DateTime;
+using Task = System.Threading.Tasks.Task;
 using UI = Gtk.Builder.ObjectAttribute;
 using Window = Gtk.Window;
 
 namespace Client.GUI
 {
-    public class Client : Window
+    public class Client : Window, IObserver
     {
+        public void Notified()
+        {
+            Task.Delay(100).ContinueWith(t=>ReloadTable());
+        }
+
         [UI] private TreeView _tree = null;
         [UI] private Calendar _calendar = null;
         [UI] private SpinButton _spinButton = null;
@@ -38,7 +49,7 @@ namespace Client.GUI
         private bool dateSelected = false;
         private DateTime date = DateTime.Today;
 
-        private Show show = null;
+        private long idShow = -1;
         
         public Application App
         {
@@ -61,13 +72,13 @@ namespace Client.GUI
         public Client(IService srv) : this(new Builder("Client.glade"))
         {
             this.srv = srv;
-
-            // this.ReloadTable();
+            srv.AddObserverNonStatic(this);
+            this.ReloadTable();
         }
 
         private Client(Builder builder) : base(builder.GetRawOwnedObject("Client"))
         {
-            
+
             builder.Autoconnect(this);
             DeleteEvent += Window_DeleteEvent;
             _buttonLogout.Clicked += ButtonLogoutOnClicked;
@@ -105,10 +116,12 @@ namespace Client.GUI
                 {
                     TreeIter z = new TreeIter();
                     var y = _tree.Model.GetIter(out z, x[0]);
-                    // show = srv.FindOneShow(long.Parse(_showsListStore.GetValue(z, 0).ToString()));
-                    if (show.TicketNumber!=0)
+                    idShow = long.Parse(_showsListStore.GetValue(z, 0).ToString());
+                    var tn = int.Parse(_showsListStore.GetValue(z, 2).ToString());
+                    
+                    if (tn!=0)
                     {
-                        _spinButton.SetRange(1.0, show.TicketNumber*1.0);
+                        _spinButton.SetRange(1.0, tn*1.0);
                         _spinButton.Value = 1.0;
                     }
                     else
@@ -121,9 +134,9 @@ namespace Client.GUI
                 {
                     _spinButton.SetRange(0.0, 0.0);
                     _spinButton.Value = 0.0;
-                    show = null;
+                    idShow = -1;
                 }
-                Console.WriteLine(show);
+                Console.WriteLine(idShow);
             };
 
             dateSelected = false;
@@ -131,7 +144,7 @@ namespace Client.GUI
 
         private void ButtonBuyClicked(object sender, EventArgs e)
         {
-            if (show == null)
+            if (idShow == -1)
             {
                 var msg = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.None,
                     "You first have to select a show!");
@@ -149,13 +162,14 @@ namespace Client.GUI
                 {
                     try
                     {
-                        var trans = srv.BuyTicket(show, Convert.ToInt32(_spinButton.Value), _clientEntry.Text);
+                        
+                        var trans = srv.BuyTicket(srv.FindOneShow(idShow), Convert.ToInt32(_spinButton.Value), _clientEntry.Text);
                         var msg = new MessageDialog(this, DialogFlags.Modal, MessageType.Info, ButtonsType.None,
                             "Transaction number is : "+trans.Id +"\nTransaction details : - Client : "+ trans.Client+
                                                                        "\n                      - Ticket number : "+trans.TicketNumber+
                                                                        "\n                      - Date : "+trans.Date);
                         msg.ShowAll();
-                        this.ReloadTable();
+                        _clientEntry.Text = "";
                     }
                     catch (Exception ex)
                     {
@@ -164,7 +178,7 @@ namespace Client.GUI
                         msg.ShowAll();
                     }
                 }
-                Console.WriteLine(show);
+                Console.WriteLine(idShow);
             }
         }
 
@@ -216,7 +230,9 @@ namespace Client.GUI
             if (dateSelected == false)
             {
                 _showsListStore.Clear();
-                foreach (var allListShow in srv.GetAllListShows())
+                var shows = srv.GetAllListShows();
+
+                foreach (var allListShow in shows)
                 {
                     if (allListShow.TicketNumber!=0)
                     {
@@ -265,11 +281,12 @@ namespace Client.GUI
                 }
             }
 
-            show = null;
+            idShow = -1;
         }
 
         private void Window_DeleteEvent(object sender, DeleteEventArgs a)
         {
+            srv.Close(this);
             Application.Quit();
         }
     }

@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "I2ngYk4ERfPengzTYrFDuS+bL33HoZUy/SJ626Q0ZIUSsT6PuY0GAuJFqk0M/6rie0rKOVm/UwadhS/UCyTq1w==",
+  "dgSpecHash": "3yVaAlNw33PwhkL8x9xY+S3xyOPXqBTIePkf5xtyKU5koL3W5sIwdbE6UTsUU4qnv3cP/N3ay2OWUBynAfhgEw==",
   "success": true,
-  "projectFilePath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj",
+  "projectFilePath": "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Common/Common.csproj",
   "expectedPackageFiles": [
     "/home/andrei/.nuget/packages/atksharp/3.24.24.34/atksharp.3.24.24.34.nupkg.sha512",
     "/home/andrei/.nuget/packages/cairosharp/3.24.24.34/cairosharp.3.24.24.34.nupkg.sha512",
+    "/home/andrei/.nuget/packages/dispatcher.common/1.0.2/dispatcher.common.1.0.2.nupkg.sha512",
+    "/home/andrei/.nuget/packages/dispatchsharp/1.0.0/dispatchsharp.1.0.0.nupkg.sha512",
     "/home/andrei/.nuget/packages/gdksharp/3.24.24.34/gdksharp.3.24.24.34.nupkg.sha512",
     "/home/andrei/.nuget/packages/giosharp/3.24.24.34/giosharp.3.24.24.34.nupkg.sha512",
     "/home/andrei/.nuget/packages/glibsharp/3.24.24.34/glibsharp.3.24.24.34.nupkg.sha512",
@@ -29,9 +31,30 @@
     "/home/andrei/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/home/andrei/.nuget/packages/system.threading/4.3.0/system.threading.4.3.0.nupkg.sha512",
     "/home/andrei/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
+    "/home/andrei/.nuget/packages/system.threading.thread/4.3.0/system.threading.thread.4.3.0.nupkg.sha512",
     "/home/andrei/.nuget/packages/system.windows.extensions/6.0.0-preview.2.21154.6/system.windows.extensions.6.0.0-preview.2.21154.6.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Dispatcher.Common 1.0.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Dispatcher.Common",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'DispatchSharp 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "DispatchSharp",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

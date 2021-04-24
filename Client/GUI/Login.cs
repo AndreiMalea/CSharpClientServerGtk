@@ -60,6 +60,7 @@ namespace Client.GUI
 
         private void Window_DeleteEvent(object sender, DeleteEventArgs a)
         {
+            srv.Close(null);
             Application.Quit();
         }
 
@@ -95,8 +96,6 @@ namespace Client.GUI
             catch (Exception e)
             {
                 msg = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.None, e.Message, "");
-                // msg.ButtonPressEvent += (o, args) => msg.Hide();
-                
                 msg.ShowAll();
             }
         }

@@ -14,7 +14,6 @@ namespace Server.Server
 
         public AbstractServer(int port) {
             this.port = port;
-            AbstractObserable.InitObservable();
         }
 
         public void Start() {
@@ -28,19 +27,13 @@ namespace Server.Server
                     SocketType.Stream, ProtocolType.Tcp);
 
                 server = new TcpListener(localEndpoint);
-                // TcpClient client = new TcpClient()
                 server.Start();
-                // server.Bind(localEndpoint);
-                
-                // server.Listen();
                 
                 Console.WriteLine("Server started...");
                 while (true) {
 
                     Console.WriteLine("Waiting for clients...");
 
-                    // Socket cl = server.Accept();
-                    // Socket cl = server.AcceptSocket();
                     TcpClient cl = server.AcceptTcpClient();
                     
                     Console.WriteLine("Client connected...");
@@ -59,8 +52,7 @@ namespace Server.Server
 
         public void Stop(){
             try {
-                // server.Close();
-                
+                server.Stop();
             } catch (Exception e) {
                 Console.WriteLine(e.StackTrace);
             }

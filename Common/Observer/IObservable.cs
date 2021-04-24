@@ -20,6 +20,10 @@ namespace Common.Observer
             throw new NotImplementedException();
         }
 
+        void AddObserverNonStatic(IObserver o);
+
+        void RemoveObserverNonStatic(IObserver o);
+
         void MyNotifyAll();
 
         void MyNotifyAllExcept(IObserver obs);

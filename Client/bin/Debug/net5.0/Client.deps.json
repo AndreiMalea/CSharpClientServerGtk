@@ -9,10 +9,13 @@
       "Client/1.0.0": {
         "dependencies": {
           "Common": "1.0.0",
+          "DispatchSharp": "1.0.0",
+          "Dispatcher.Common": "1.0.2",
           "GtkSharp": "3.24.24.34",
           "Server": "1.0.0",
           "System.Net.Sockets": "4.3.0",
-          "System.Threading": "4.3.0"
+          "System.Threading": "4.3.0",
+          "System.Threading.Thread": "4.3.0"
         },
         "runtime": {
           "Client.dll": {}
@@ -34,6 +37,22 @@
           "lib/netstandard2.0/CairoSharp.dll": {
             "assemblyVersion": "3.24.24.34",
             "fileVersion": "3.24.24.34"
+          }
+        }
+      },
+      "Dispatcher.Common/1.0.2": {
+        "runtime": {
+          "lib/net461/Dispatcher.Common.dll": {
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
+          }
+        }
+      },
+      "DispatchSharp/1.0.0": {
+        "runtime": {
+          "lib/net40/DispatchSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -293,6 +312,11 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.Threading.Thread/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        }
+      },
       "System.Windows.Extensions/6.0.0-preview.2.21154.6": {
         "dependencies": {
           "System.Drawing.Common": "6.0.0-preview.2.21154.6"
@@ -314,11 +338,14 @@
       },
       "Common/1.0.0": {
         "dependencies": {
+          "DispatchSharp": "1.0.0",
+          "Dispatcher.Common": "1.0.2",
           "GtkSharp": "3.24.24.34",
           "Mono.Data.Sqlite": "1.0.61",
           "System.Configuration.ConfigurationManager": "6.0.0-preview.2.21154.6",
           "System.Net.Sockets": "4.3.0",
-          "System.Threading": "4.3.0"
+          "System.Threading": "4.3.0",
+          "System.Threading.Thread": "4.3.0"
         },
         "runtime": {
           "Common.dll": {}
@@ -327,10 +354,13 @@
       "Server/1.0.0": {
         "dependencies": {
           "Common": "1.0.0",
+          "DispatchSharp": "1.0.0",
+          "Dispatcher.Common": "1.0.2",
           "GtkSharp": "3.24.24.34",
           "Mono.Data.Sqlite": "1.0.61",
           "System.Net.Sockets": "4.3.0",
-          "System.Threading": "4.3.0"
+          "System.Threading": "4.3.0",
+          "System.Threading.Thread": "4.3.0"
         },
         "runtime": {
           "Server.dll": {}
@@ -357,6 +387,20 @@
       "sha512": "sha512-hr75uYPGFlmB3RvpL3/6ZJtb+UiKsrpkyjb5VGI+8y1/lkY405FMBhPZKlxFqoEH0iIZ9gAMPBqKzT1lSVaDqA==",
       "path": "cairosharp/3.24.24.34",
       "hashPath": "cairosharp.3.24.24.34.nupkg.sha512"
+    },
+    "Dispatcher.Common/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R1JoskyXWP/m4JeD5qBPBMA1f8w+vQ0ABezzVuAY/WROAo2ax8rNC0o9pxz0zPD/sBCkLCwmX0GyTbpaG6Fn6w==",
+      "path": "dispatcher.common/1.0.2",
+      "hashPath": "dispatcher.common.1.0.2.nupkg.sha512"
+    },
+    "DispatchSharp/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1yh8AfmpDGa5/fs9aKupZLMqjcutVWgDvJkffCuJ7kM0gg8/BjHO7i5rQdV+BojcXbFM6l78QnDdFYysP/GKOw==",
+      "path": "dispatchsharp/1.0.0",
+      "hashPath": "dispatchsharp.1.0.0.nupkg.sha512"
     },
     "GdkSharp/3.24.24.34": {
       "type": "package",
@@ -518,6 +562,13 @@
       "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
+    },
+    "System.Threading.Thread/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OHmbT+Zz065NKII/ZHcH9XO1dEuLGI1L2k7uYss+9C1jLxTC9kTZZuzUOyXHayRk+dft9CiDf3I/QZ0t8JKyBQ==",
+      "path": "system.threading.thread/4.3.0",
+      "hashPath": "system.threading.thread.4.3.0.nupkg.sha512"
     },
     "System.Windows.Extensions/6.0.0-preview.2.21154.6": {
       "type": "package",

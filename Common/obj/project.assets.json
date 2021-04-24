@@ -23,6 +23,24 @@
           "lib/netstandard2.0/CairoSharp.dll": {}
         }
       },
+      "Dispatcher.Common/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net461/Dispatcher.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Dispatcher.Common.dll": {}
+        }
+      },
+      "DispatchSharp/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/DispatchSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net40/DispatchSharp.dll": {}
+        }
+      },
       "GdkSharp/3.24.24.34": {
         "type": "package",
         "dependencies": {
@@ -332,6 +350,18 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "System.Threading.Thread/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Threading.Thread.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Threading.Thread.dll": {}
+        }
+      },
       "System.Windows.Extensions/6.0.0-preview.2.21154.6": {
         "type": "package",
         "dependencies": {
@@ -375,6 +405,34 @@
         "cairosharp.3.24.24.34.nupkg.sha512",
         "cairosharp.nuspec",
         "lib/netstandard2.0/CairoSharp.dll"
+      ]
+    },
+    "Dispatcher.Common/1.0.2": {
+      "sha512": "R1JoskyXWP/m4JeD5qBPBMA1f8w+vQ0ABezzVuAY/WROAo2ax8rNC0o9pxz0zPD/sBCkLCwmX0GyTbpaG6Fn6w==",
+      "type": "package",
+      "path": "dispatcher.common/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dispatcher.common.1.0.2.nupkg.sha512",
+        "dispatcher.common.nuspec",
+        "lib/net461/Dispatcher.Common.dll",
+        "lib/net461/Dispatcher.Common.pdb"
+      ]
+    },
+    "DispatchSharp/1.0.0": {
+      "sha512": "1yh8AfmpDGa5/fs9aKupZLMqjcutVWgDvJkffCuJ7kM0gg8/BjHO7i5rQdV+BojcXbFM6l78QnDdFYysP/GKOw==",
+      "type": "package",
+      "path": "dispatchsharp/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "dispatchsharp.1.0.0.nupkg.sha512",
+        "dispatchsharp.nuspec",
+        "lib/net40/DispatchSharp.XML",
+        "lib/net40/DispatchSharp.dll",
+        "lib/net40/DispatchSharp.pdb"
       ]
     },
     "GdkSharp/3.24.24.34": {
@@ -1270,6 +1328,46 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "System.Threading.Thread/4.3.0": {
+      "sha512": "OHmbT+Zz065NKII/ZHcH9XO1dEuLGI1L2k7uYss+9C1jLxTC9kTZZuzUOyXHayRk+dft9CiDf3I/QZ0t8JKyBQ==",
+      "type": "package",
+      "path": "system.threading.thread/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Threading.Thread.dll",
+        "lib/netcore50/_._",
+        "lib/netstandard1.3/System.Threading.Thread.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Threading.Thread.dll",
+        "ref/netstandard1.3/System.Threading.Thread.dll",
+        "ref/netstandard1.3/System.Threading.Thread.xml",
+        "ref/netstandard1.3/de/System.Threading.Thread.xml",
+        "ref/netstandard1.3/es/System.Threading.Thread.xml",
+        "ref/netstandard1.3/fr/System.Threading.Thread.xml",
+        "ref/netstandard1.3/it/System.Threading.Thread.xml",
+        "ref/netstandard1.3/ja/System.Threading.Thread.xml",
+        "ref/netstandard1.3/ko/System.Threading.Thread.xml",
+        "ref/netstandard1.3/ru/System.Threading.Thread.xml",
+        "ref/netstandard1.3/zh-hans/System.Threading.Thread.xml",
+        "ref/netstandard1.3/zh-hant/System.Threading.Thread.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.threading.thread.4.3.0.nupkg.sha512",
+        "system.threading.thread.nuspec"
+      ]
+    },
     "System.Windows.Extensions/6.0.0-preview.2.21154.6": {
       "sha512": "qOzgPiyAPMbW8i11xAXR20P2JKnygk9W33NgZsHQU6gdXIvXUnx2ENW8KEAj5L8qeummxgSG6uBM0c/Dmq4YMw==",
       "type": "package",
@@ -1293,11 +1391,14 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "DispatchSharp >= 1.0.0",
+      "Dispatcher.Common >= 1.0.2",
       "GtkSharp >= 3.24.24.*",
       "Mono.Data.Sqlite >= 1.0.61",
       "System.Configuration.ConfigurationManager >= 6.0.0-preview.2.21154.6",
       "System.Net.Sockets >= 4.3.0",
-      "System.Threading >= 4.3.0"
+      "System.Threading >= 4.3.0",
+      "System.Threading.Thread >= 4.3.0"
     ]
   },
   "packageFolders": {
@@ -1306,11 +1407,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj",
+      "projectUniqueName": "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Common/Common.csproj",
       "projectName": "Common",
-      "projectPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj",
+      "projectPath": "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Common/Common.csproj",
       "packagesPath": "/home/andrei/.nuget/packages/",
-      "outputPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/obj/",
+      "outputPath": "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Common/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/andrei/.nuget/NuGet/NuGet.Config"
@@ -1337,6 +1438,14 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "DispatchSharp": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "Dispatcher.Common": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          },
           "GtkSharp": {
             "target": "Package",
             "version": "[3.24.24.*, )"
@@ -1354,6 +1463,10 @@
             "version": "[4.3.0, )"
           },
           "System.Threading": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          },
+          "System.Threading.Thread": {
             "target": "Package",
             "version": "[4.3.0, )"
           }
@@ -1378,6 +1491,26 @@
     }
   },
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Dispatcher.Common 1.0.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Dispatcher.Common",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'DispatchSharp 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "DispatchSharp",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

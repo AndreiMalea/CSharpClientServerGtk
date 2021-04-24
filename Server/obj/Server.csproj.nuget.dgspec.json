@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Server/Server.csproj": {}
+    "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Server/Server.csproj": {}
   },
   "projects": {
-    "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj": {
+    "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Common/Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj",
+        "projectUniqueName": "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Common/Common.csproj",
         "projectName": "Common",
-        "projectPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj",
+        "projectPath": "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Common/Common.csproj",
         "packagesPath": "/home/andrei/.nuget/packages/",
-        "outputPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/obj/",
+        "outputPath": "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Common/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/andrei/.nuget/NuGet/NuGet.Config"
@@ -38,6 +38,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "DispatchSharp": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Dispatcher.Common": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
             "GtkSharp": {
               "target": "Package",
               "version": "[3.24.24.*, )"
@@ -55,6 +63,10 @@
               "version": "[4.3.0, )"
             },
             "System.Threading": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Threading.Thread": {
               "target": "Package",
               "version": "[4.3.0, )"
             }
@@ -78,14 +90,14 @@
         }
       }
     },
-    "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Server/Server.csproj": {
+    "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Server/Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Server/Server.csproj",
+        "projectUniqueName": "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Server/Server.csproj",
         "projectName": "Server",
-        "projectPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Server/Server.csproj",
+        "projectPath": "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Server/Server.csproj",
         "packagesPath": "/home/andrei/.nuget/packages/",
-        "outputPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Server/obj/",
+        "outputPath": "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/andrei/.nuget/NuGet/NuGet.Config"
@@ -100,8 +112,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj": {
-                "projectPath": "/home/andrei/GitHubPersonal/CSharpClientServerGtk/Common/Common.csproj"
+              "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Common/Common.csproj": {
+                "projectPath": "/home/andrei/GitHub/mpp-proiect-repository-AndreiMalea/LabCSharpClientServer/Common/Common.csproj"
               }
             }
           }
@@ -116,6 +128,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "DispatchSharp": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Dispatcher.Common": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
             "GtkSharp": {
               "target": "Package",
               "version": "[3.24.24.*, )"
@@ -129,6 +149,10 @@
               "version": "[4.3.0, )"
             },
             "System.Threading": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Threading.Thread": {
               "target": "Package",
               "version": "[4.3.0, )"
             }

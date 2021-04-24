@@ -7,10 +7,9 @@ namespace Common.Interfaces
 {
     public interface IService:IObservable
     {
+        public Show FindOneShow(long id);
         
         IList<Show> GetAllListShows();
-
-        Employee EmployeeByUser(string user);
 
         Employee Login(string user, string pass);
 
@@ -18,6 +17,6 @@ namespace Common.Interfaces
 
         Transaction BuyTicket(Show s, int no, string client);
 
-        Employee GetEmployeeByUser(string user);
+        void Close(IObserver o);
     }
 }
